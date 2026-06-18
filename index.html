@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonaline Bhujbal | Business Analyst & Functional Consultant</title>
+<meta name="description" content="Sonaline Bhujbal — Senior Business Analyst with 10+ years in AML/KYC, Regulatory Compliance, and Enterprise Technology. Available for BA, PM, and Product Analyst roles.">
+<meta name="keywords" content="Business Analyst, Senior Business Analyst, Product Analyst, Project Coordinator, Project Manager, Requirements Gathering, Stakeholder Management, Agile, Scrum, Process Improvement, AML KYC, Pune">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D1117;
+    --surface: #F7F8FA;
+    --white: #FFFFFF;
+    --accent: #1B4FD8;
+    --accent-light: #EEF2FF;
+    --accent-gold: #D4A843;
+    --text-primary: #0D1117;
+    --text-secondary: #4B5563;
+    --text-muted: #9CA3AF;
+    --border: #E5E7EB;
+    --card: #FFFFFF;
+    --tag-bg: #EEF2FF;
+    --tag-text: #1B4FD8;
+    --success: #059669;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 24px rgba(27,79,216,0.15);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #F0F4FF;
+      --surface: #0D1117;
+      --white: #161B22;
+      --accent: #4D7CFF;
+      --accent-light: #1B2140;
+      --text-primary: #F0F4FF;
+      --text-secondary: #9CA3AF;
+      --text-muted: #6B7280;
+      --border: #21262D;
+      --card: #161B22;
+      --tag-bg: #1B2140;
+      --tag-text: #7BA4FF;
+      --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
+      --shadow-hover: 0 4px 24px rgba(77,124,255,0.25);
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--surface);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  @media (prefers-color-scheme: dark) {
+    nav { background: rgba(13,17,23,0.9); }
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  @media (max-width: 768px) { .nav-links { display: none; } }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 100px 2rem 80px;
+    display: flex; align-items: center;
+    background: var(--white);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(27,79,216,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent-light); color: var(--accent);
+    border-radius: 100px; padding: 0.375rem 1rem; font-size: 0.8rem; font-weight: 600;
+    margin-bottom: 1.5rem; letter-spacing: 0.04em;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--success); border-radius: 50%; }
+  .hero h1 {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    line-height: 1.1; letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-sub { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem; font-weight: 400; max-width: 520px; line-height: 1.7; }
+  .hero-value {
+    background: var(--surface); border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0; padding: 1rem 1.25rem;
+    margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-secondary); font-style: italic;
+  }
+  .hero-stats { display: flex; gap: 2rem; margin-bottom: 2.5rem; }
+  .stat-item { text-align: center; }
+  .stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2rem; color: var(--accent); display: block; }
+  .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.5rem; border-radius: var(--radius); font-weight: 600; font-size: 0.9rem;
+    text-decoration: none; cursor: pointer; border: none; transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+  .btn-outline { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+  .btn-outline:hover { background: var(--accent-light); }
+  .hero-card {
+    background: var(--card); border-radius: var(--radius-lg); padding: 2rem;
+    box-shadow: var(--shadow); border: 1px solid var(--border);
+  }
+  .photo-placeholder {
+    width: 120px; height: 120px; background: var(--accent-light);
+    border-radius: 50%; margin: 0 auto 1.5rem;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--accent);
+    border: 4px solid var(--accent);
+  }
+  .hero-card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; text-align: center; margin-bottom: 0.25rem; }
+  .hero-card p { text-align: center; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.6rem 0.75rem; border-radius: var(--radius); background: var(--surface);
+    font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;
+    transition: all 0.2s;
+  }
+  .contact-link:hover { background: var(--accent-light); color: var(--accent); }
+  .contact-link span:first-child { font-size: 1rem; }
+  @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } .hero-card { display: none; } }
+
+  /* SECTIONS */
+  section { padding: 80px 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 1rem; }
+  .section-desc { color: var(--text-secondary); font-size: 1rem; max-width: 600px; line-height: 1.7; margin-bottom: 3rem; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  @media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } section { padding: 60px 1.25rem; } }
+  @media (max-width: 1024px) { .grid-3 { grid-template-columns: 1fr 1fr; } .grid-4 { grid-template-columns: 1fr 1fr; } }
+
+  /* ABOUT */
+  #about { background: var(--surface); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.8; }
+  .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
+  .highlight-card {
+    background: var(--card); border-radius: var(--radius); padding: 1.25rem;
+    border: 1px solid var(--border); box-shadow: var(--shadow);
+  }
+  .highlight-card h4 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .highlight-card p { font-size: 0.875rem; color: var(--text-secondary); }
+  .highlight-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+  /* WHY HIRE */
+  #why { background: var(--white); }
+  .why-card {
+    background: var(--card); border-radius: var(--radius-lg); padding: 1.75rem;
+    border: 1px solid var(--border); box-shadow: var(--shadow);
+    transition: all 0.3s;
+  }
+  .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
+  .why-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .why-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+  .why-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* EXPERIENCE */
+  #experience { background: var(--surface); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-dot {
+    position: absolute; left: -2.45rem; top: 0.5rem;
+    width: 14px; height: 14px; background: var(--accent); border-radius: 50%;
+    border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--accent);
+  }
+  .timeline-card {
+    background: var(--card); border-radius: var(--radius-lg); padding: 2rem;
+    border: 1px solid var(--border); box-shadow: var(--shadow);
+  }
+  .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem; }
+  .timeline-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; }
+  .timeline-period {
+    background: var(--accent-light); color: var(--accent); font-size: 0.8rem;
+    font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; white-space: nowrap;
+  }
+  .timeline-company { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem; }
+  .timeline-company strong { color: var(--text-primary); }
+  .achievement-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; }
+  .achievement-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+  .achievement-list li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 0.1rem; }
+  .metric-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chip {
+    background: var(--accent-light); color: var(--accent); font-size: 0.8rem;
+    font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px;
+  }
+  .chip-gold { background: rgba(212,168,67,0.15); color: var(--accent-gold); }
+
+  /* CASE STUDIES */
+  #casestudies { background: var(--white); }
+  .case-card {
+    background: var(--card); border-radius: var(--radius-lg); padding: 2.5rem;
+    border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 2rem;
+  }
+  .case-num {
+    display: inline-block; font-family: 'Syne', sans-serif; font-size: 0.75rem;
+    font-weight: 800; letter-spacing: 0.1em; color: var(--accent);
+    background: var(--accent-light); padding: 0.25rem 0.75rem; border-radius: 100px; margin-bottom: 1rem;
+  }
+  .case-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 1.5rem; }
+  .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  @media (max-width: 768px) { .case-grid { grid-template-columns: 1fr; } }
+  .case-section h5 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .case-section p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+  .case-outcome {
+    margin-top: 1.5rem; background: var(--surface);
+    border-radius: var(--radius); padding: 1.25rem; border-left: 3px solid var(--success);
+  }
+  .case-outcome h5 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; color: var(--success); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .case-outcome p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+
+  /* SKILLS */
+  #skills { background: var(--surface); }
+  .skills-category { margin-bottom: 2.5rem; }
+  .skills-category h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 1rem; color: var(--accent); }
+  .skill-bar-group { display: flex; flex-direction: column; gap: 0.75rem; }
+  .skill-bar-item { display: flex; flex-direction: column; gap: 0.35rem; }
+  .skill-bar-header { display: flex; justify-content: space-between; font-size: 0.85rem; }
+  .skill-bar-header span:first-child { font-weight: 500; }
+  .skill-bar-header span:last-child { color: var(--text-muted); }
+  .skill-bar-track { height: 6px; background: var(--border); border-radius: 100px; overflow: hidden; }
+  .skill-bar-fill {
+    height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--accent), #4D7CFF);
+    transition: width 1s ease;
+  }
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag {
+    background: var(--tag-bg); color: var(--tag-text); font-size: 0.8rem;
+    font-weight: 500; padding: 0.35rem 0.75rem; border-radius: 100px;
+  }
+
+  /* CERTS */
+  #certifications { background: var(--white); }
+  .cert-card {
+    background: var(--card); border-radius: var(--radius-lg); padding: 1.75rem;
+    border: 1px solid var(--border); box-shadow: var(--shadow);
+    display: flex; gap: 1rem; align-items: flex-start;
+    transition: all 0.2s;
+  }
+  .cert-card:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); }
+  .cert-icon {
+    width: 48px; height: 48px; background: var(--accent-light); border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
+  }
+  .cert-content h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .cert-content p { font-size: 0.8rem; color: var(--text-secondary); }
+  .cert-badge { margin-top: 0.5rem; display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--success); background: rgba(5,150,105,0.1); padding: 0.2rem 0.6rem; border-radius: 100px; }
+  .cert-badge.progress { color: var(--accent-gold); background: rgba(212,168,67,0.15); }
+
+  /* ACHIEVEMENTS */
+  #achievements { background: var(--surface); }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 768px) { .kpi-grid { grid-template-columns: 1fr 1fr; } }
+  .kpi-card {
+    background: var(--card); border-radius: var(--radius-lg); padding: 2rem 1.5rem;
+    border: 1px solid var(--border); box-shadow: var(--shadow); text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .kpi-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), #4D7CFF);
+  }
+  .kpi-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; color: var(--accent); display: block; }
+  .kpi-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; line-height: 1.4; }
+
+  /* LEADERSHIP */
+  #leadership { background: var(--white); }
+  .lead-card {
+    background: var(--card); border-radius: var(--radius-lg); padding: 1.75rem;
+    border: 1px solid var(--border); box-shadow: var(--shadow);
+  }
+  .lead-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .lead-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+  .lead-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+
+  /* VISION */
+  #vision { background: var(--surface); }
+  .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  @media (max-width: 768px) { .vision-grid { grid-template-columns: 1fr; } }
+  .vision-block { background: var(--card); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border); box-shadow: var(--shadow); }
+  .vision-block h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 1rem; color: var(--accent); }
+  .vision-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .vision-list li { font-size: 0.9rem; color: var(--text-secondary); display: flex; gap: 0.5rem; }
+  .vision-list li::before { content: '✦'; color: var(--accent-gold); flex-shrink: 0; }
+
+  /* EDUCATION */
+  #education { background: var(--white); }
+  .edu-card { background: var(--card); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border); box-shadow: var(--shadow); display: flex; gap: 1.5rem; align-items: flex-start; }
+  .edu-icon { width: 56px; height: 56px; background: var(--accent-light); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+  .edu-content h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+  .edu-content p { font-size: 0.875rem; color: var(--text-secondary); }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--surface); }
+  .testimonial-card { background: var(--card); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border); box-shadow: var(--shadow); }
+  .testimonial-quote { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; font-style: italic; margin-bottom: 1.25rem; }
+  .testimonial-quote::before { content: '"'; font-family: 'Syne', sans-serif; font-size: 3rem; color: var(--accent); opacity: 0.3; display: block; line-height: 1; margin-bottom: -0.5rem; }
+  .testimonial-author { font-weight: 600; font-size: 0.9rem; }
+  .testimonial-role { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* CONTACT */
+  #contact { background: var(--ink); color: white; }
+  #contact .section-label { color: #7BA4FF; }
+  #contact .section-title { color: white; }
+  #contact .section-desc { color: rgba(255,255,255,0.6); }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg); padding: 1.5rem; text-align: center;
+    text-decoration: none; color: white; transition: all 0.2s;
+  }
+  .contact-card:hover { background: rgba(77,124,255,0.2); border-color: #4D7CFF; transform: translateY(-2px); }
+  .contact-card-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .contact-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .contact-card p { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+  .cta-banner {
+    text-align: center; padding: 3rem 2rem; margin-bottom: 3rem;
+    background: linear-gradient(135deg, rgba(27,79,216,0.2) 0%, rgba(77,124,255,0.1) 100%);
+    border-radius: var(--radius-lg); border: 1px solid rgba(77,124,255,0.3);
+  }
+  .cta-banner h3 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .cta-banner p { color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+  .cta-banner .btn { background: var(--accent); color: white; }
+
+  /* FOOTER */
+  footer { background: #0A0D14; padding: 2rem; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">SB</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#casestudies">Case Studies</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#achievements">Impact</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge fade-up">Available for BA &amp; PM Opportunities · Pune, India</div>
+      <h1 class="fade-up delay-1">Turning <span>Compliance Complexity</span> into Business Clarity</h1>
+      <p class="hero-sub fade-up delay-2">Senior Business Analyst with 10+ years delivering regulatory and enterprise technology initiatives across Banking &amp; Financial Services — from AML/KYC programs to cross-functional agile delivery.</p>
+      <div class="hero-value fade-up delay-2">
+        I bridge the gap between business requirements and technical execution, ensuring compliance meets efficiency — with zero critical production escapes across 20+ audit-ready AML releases.
+      </div>
+      <div class="hero-stats fade-up delay-2">
+        <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-item"><span class="stat-num">20+</span><span class="stat-label">AML Releases</span></div>
+        <div class="stat-item"><span class="stat-num">750K+</span><span class="stat-label">Txns Validated</span></div>
+        <div class="stat-item"><span class="stat-num">30%</span><span class="stat-label">Defect Reduction</span></div>
+      </div>
+      <div class="hero-actions fade-up delay-3">
+        <a href="mailto:bhujabalsonalin@gmail.com" class="btn btn-primary">📧 Contact Me</a>
+        <a href="https://linkedin.com/in/sonalinebhujbal" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+        <a href="#" class="btn btn-outline">⬇ Download CV</a>
+      </div>
+    </div>
+    <div class="hero-card fade-up delay-2">
+      <div class="photo-placeholder">SB</div>
+      <h3>Sonaline Bhujbal</h3>
+      <p>Business Analyst · Functional Consultant · AML Specialist</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:bhujabalsonalin@gmail.com"><span>📧</span><span>bhujabalsonalin@gmail.com</span></a>
+        <a class="contact-link" href="tel:+918989811446"><span>📱</span><span>+91 8989 811446</span></a>
+        <a class="contact-link" href="https://linkedin.com/in/sonalinebhujbal" target="_blank"><span>🔗</span><span>linkedin.com/in/sonalinebhujbal</span></a>
+        <a class="contact-link" href="#"><span>📍</span><span>Pune, India</span></a>
+        <a class="contact-link" href="#"><span>🎓</span><span>B.Tech · KIIT 2015</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About Me</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">10 Years of Bridging Business &amp; Technology</h2>
+        <p>I am a Business Analyst and Functional Consultant with a decade of experience delivering regulatory, compliance, and enterprise technology programs within Banking and Financial Services. My career spans AML/KYC compliance, Transaction Monitoring, and Enterprise Governance — working with global institutions including CIBC, Morgan Stanley, and EverBank through Tata Consultancy Services.</p>
+        <p>My strength lies in translating complex regulatory requirements into actionable functional specifications, facilitating alignment between compliance, operations, risk, and engineering teams. I have led UAT governance across audit-sensitive releases, built traceability frameworks adopted organization-wide, and driven measurable improvements in both delivery quality and operational efficiency.</p>
+        <p>Currently deepening my credentials with the ECBA certification (IIBA) and Google Generative AI Leader certification, I am actively pursuing roles as a Business Analyst, Senior Business Analyst, Product Analyst, or Project Manager where I can apply domain expertise and cross-functional leadership to deliver meaningful business outcomes.</p>
+        <div style="margin-top: 1.5rem;">
+          <div class="tag-cloud">
+            <span class="tag">AML / KYC</span><span class="tag">Agile Delivery</span><span class="tag">Stakeholder Management</span><span class="tag">UAT Governance</span><span class="tag">Requirements Elicitation</span><span class="tag">BFSI Domain</span><span class="tag">Regulatory Compliance</span><span class="tag">JIRA · Confluence</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">🏦</div>
+          <h4>BFSI Domain Expert</h4>
+          <p>Deep specialization in AML/KYC, Transaction Monitoring, Trade Surveillance, and Regulatory Compliance across Tier-1 global banking clients.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">📋</div>
+          <h4>Requirements &amp; Governance Leader</h4>
+          <p>Authored BRDs, FRDs, traceability matrices, and governance artefact packs that are audit-compliant and reusable across project teams.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🤝</div>
+          <h4>Cross-Functional Collaborator</h4>
+          <p>Proven track record facilitating alignment workshops across Business, Compliance, QA, Development, and Infrastructure stakeholders.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🤖</div>
+          <h4>AI-Augmented Practitioner</h4>
+          <p>Leverages AI-assisted tools to accelerate requirement refinement, governance reporting, and stakeholder communications — Google GenAI Leader certified.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY HIRE ME -->
+<section id="why">
+  <div class="container">
+    <div class="section-label">Why Hire Me</div>
+    <h2 class="section-title">What I Bring to Your Team</h2>
+    <p class="section-desc">Eight distinct capabilities that directly drive project success, stakeholder confidence, and compliance assurance.</p>
+    <div class="grid-4">
+      <div class="why-card"><div class="why-icon">🔍</div><h4>Requirement Clarity</h4><p>I eliminate ambiguity before development begins — reducing requirement-related defects by 30% through structured elicitation and BRD/FRD documentation.</p></div>
+      <div class="why-card"><div class="why-icon">🤝</div><h4>Stakeholder Communication</h4><p>Experienced facilitating workshops across Business, Compliance, Risk, and Technology — translating regulatory language into testable specifications.</p></div>
+      <div class="why-card"><div class="why-icon">🔄</div><h4>Process Improvement</h4><p>Introduced governance checkpoints that reduced defect leakage by 25% and improved artifact consistency by 15–20% across project teams.</p></div>
+      <div class="why-card"><div class="why-icon">🧪</div><h4>UAT &amp; QA Expertise</h4><p>Designed and managed UAT governance across 20+ audit-compliant AML releases with zero critical production escapes.</p></div>
+      <div class="why-card"><div class="why-icon">📊</div><h4>Data-Driven Decisions</h4><p>Built KPI/KRI dashboards and governance reporting frameworks used by senior leadership for risk-based decision-making.</p></div>
+      <div class="why-card"><div class="why-icon">⚡</div><h4>Agile Delivery</h4><p>Active sprint planning and backlog refinement contributor — achieved 20% rework reduction and 15% improvement in on-time sprint completion.</p></div>
+      <div class="why-card"><div class="why-icon">🛡️</div><h4>Production Support</h4><p>3+ years of Tier-3 incident management for SEC-regulated platforms — root cause analysis, corrective actions, and runbook governance.</p></div>
+      <div class="why-card"><div class="why-icon">🎯</div><h4>AML Domain Mastery</h4><p>IIBF AML/KYC certified with hands-on experience across NICE Actimize, compliance monitoring, and regulatory audit readiness.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">Career Timeline</h2>
+    <p class="section-desc">10+ years across enterprise banking compliance programs — from production support through functional delivery lead.</p>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-role">Functional Delivery Lead &amp; Business Analyst</div>
+            <span class="timeline-period">Sep 2025 – Present</span>
+          </div>
+          <div class="timeline-company"><strong>Tata Consultancy Services</strong> · EverBank | Gurgaon</div>
+          <ul class="achievement-list">
+            <li>Led requirements validation and gap analysis for AML compliance changes, clarifying scope and acceptance criteria prior to development — reducing requirement-related defects by ~30%.</li>
+            <li>Served as cross-functional liaison between QA, Development, Infrastructure, and Compliance; facilitated alignment meetings ensuring consistent functional documentation across all parties.</li>
+            <li>Designed and coordinated UAT scenarios across concurrent AML workstreams; led stakeholder sign-off processes ensuring test coverage mapped directly to regulatory acceptance criteria.</li>
+            <li>Introduced governance checkpoints into the release pipeline, closing process gaps and reducing defect leakage by ~25%, with reusable workflow frameworks adopted across teams.</li>
+            <li>Produced KPI/KRI dashboards covering delivery risk, defect trends, and artifact compliance for senior leadership and project governance forums.</li>
+            <li>Delivered 20+ audit-compliant AML releases with zero critical production escapes, leveraging AI-assisted documentation to accelerate governance reporting.</li>
+          </ul>
+          <div class="metric-chips">
+            <span class="chip">30% Defect Reduction</span>
+            <span class="chip">25% Leakage Cut</span>
+            <span class="chip">15-20% Artifact Consistency</span>
+            <span class="chip">20+ AML Releases</span>
+            <span class="chip chip-gold">Zero Production Escapes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-role">QA Test Lead — Regulatory Compliance (Acting BA &amp; Manager)</div>
+            <span class="timeline-period">Sep 2019 – Sep 2025</span>
+          </div>
+          <div class="timeline-company"><strong>Tata Consultancy Services</strong> · CIBC | Bhubaneswar</div>
+          <ul class="achievement-list">
+            <li>Validated 750,000+ transactions using SQL, ensuring data accuracy and compliance readiness for regulated workflows.</li>
+            <li>Improved delivery alignment through active Agile sprint planning and backlog refinement — achieved 20% rework reduction and 15% increase in on-time sprint completion over 12 months.</li>
+            <li>Established end-to-end traceability matrices and governance frameworks across enterprise compliance releases, strengthening audit readiness and requirement coverage.</li>
+            <li>Identified process gaps and optimized AML monitoring workflows, reducing compliance control defects and improving operational efficiency by ~30%.</li>
+            <li>Facilitated stakeholder workshops aligning business requirements, regulatory expectations, and technical implementation across cross-functional teams.</li>
+            <li>Conducted root cause analysis for SEC-regulated compliance platforms, improving operational stability and reducing recurring production incidents.</li>
+          </ul>
+          <div class="metric-chips">
+            <span class="chip">750K+ Transactions</span>
+            <span class="chip">20% Rework Reduction</span>
+            <span class="chip">15% Sprint Improvement</span>
+            <span class="chip">30% Efficiency Gain</span>
+            <span class="chip chip-gold">6 Years · Enterprise Scale</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-role">L3 Production Support &amp; Functional Governance</div>
+            <span class="timeline-period">Jul 2016 – Jul 2019</span>
+          </div>
+          <div class="timeline-company"><strong>Tata Consultancy Services</strong> · Morgan Stanley | Pune</div>
+          <ul class="achievement-list">
+            <li>Managed Tier-3 production incidents for SEC-regulated Trade Surveillance platforms via ServiceNow; performed root cause analysis and delivered permanent corrective actions.</li>
+            <li>Developed preventive monitoring runbooks, incident playbooks, and process governance documentation that reduced recurring production incidents and improved platform reliability.</li>
+            <li>Coordinated production deployments and managed compliance application onboarding through structured change control processes, ensuring alignment between business expectations and system behaviour.</li>
+            <li>Produced incident trend reports and operational status updates for senior management, supporting informed decision-making on platform risks and stability.</li>
+          </ul>
+          <div class="metric-chips">
+            <span class="chip">Tier-3 Incident Management</span>
+            <span class="chip">SEC Regulated</span>
+            <span class="chip">ServiceNow</span>
+            <span class="chip chip-gold">Morgan Stanley</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="casestudies">
+  <div class="container">
+    <div class="section-label">Business Analysis Portfolio</div>
+    <h2 class="section-title">Case Studies</h2>
+    <p class="section-desc">Real challenges. Structured analysis. Measurable outcomes.</p>
+
+    <div class="case-card">
+      <span class="case-num">CASE STUDY 01</span>
+      <div class="case-title">AML Compliance Release Governance — EverBank</div>
+      <div class="case-grid">
+        <div class="case-section">
+          <h5>Business Problem</h5>
+          <p>AML compliance changes lacked clear requirement coverage and governance checkpoints, leading to defect leakage into production and inconsistent audit artefacts across workstreams.</p>
+        </div>
+        <div class="case-section">
+          <h5>My Role</h5>
+          <p>Functional Delivery Lead acting as Business Analyst — responsible for requirements validation, gap analysis, UAT design, stakeholder coordination, and governance documentation.</p>
+        </div>
+        <div class="case-section">
+          <h5>Approach</h5>
+          <p>Reviewed regulatory requirements against functional specs, identified coverage gaps, introduced governance checkpoints into the release pipeline, and built reusable traceability and documentation frameworks.</p>
+        </div>
+      </div>
+      <div class="case-section" style="margin-top:1.25rem;">
+        <h5>Analysis Performed</h5>
+        <p>Requirements analysis · Gap analysis · UAT scenario design · Traceability mapping · Stakeholder alignment workshops · Risk identification and mitigation planning · Artifact consistency review.</p>
+      </div>
+      <div class="case-outcome">
+        <h5>Outcome</h5>
+        <p>Delivered 20+ audit-compliant AML releases with zero critical production escapes. Requirement clarity improved by ~30% reduction in requirement-related defects. Governance frameworks adopted org-wide, improving artefact consistency by 15–20%.</p>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <span class="case-num">CASE STUDY 02</span>
+      <div class="case-title">Enterprise AML Monitoring Optimization — CIBC</div>
+      <div class="case-grid">
+        <div class="case-section">
+          <h5>Business Problem</h5>
+          <p>AML monitoring workflows had compliance control defects causing regulatory risk exposure. Agile sprint completion was inconsistent, with high rework rates reducing delivery reliability.</p>
+        </div>
+        <div class="case-section">
+          <h5>My Role</h5>
+          <p>QA Test Lead with acting BA and manager responsibilities — performing functional analysis, process gap identification, sprint planning, stakeholder facilitation, and governance reporting.</p>
+        </div>
+        <div class="case-section">
+          <h5>Approach</h5>
+          <p>Validated 750K+ transactions via SQL; facilitated requirement and compliance alignment workshops; established traceability matrices; participated in backlog refinement to sharpen acceptance criteria and reduce downstream defects.</p>
+        </div>
+      </div>
+      <div class="case-section" style="margin-top:1.25rem;">
+        <h5>Analysis Performed</h5>
+        <p>SQL data validation · Process gap analysis · Agile backlog refinement · Traceability framework design · KPI/KRI dashboard development · Root cause analysis for compliance incidents.</p>
+      </div>
+      <div class="case-outcome">
+        <h5>Outcome</h5>
+        <p>30% improvement in operational efficiency. 20% reduction in rework. 15% increase in on-time sprint completion over 12 months. Strengthened audit readiness across enterprise compliance releases. KPI dashboards adopted by senior leadership for data-driven risk assessment.</p>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <span class="case-num">CASE STUDY 03</span>
+      <div class="case-title">SEC Trade Surveillance Incident Governance — Morgan Stanley</div>
+      <div class="case-grid">
+        <div class="case-section">
+          <h5>Business Problem</h5>
+          <p>Recurring production incidents on SEC-regulated Trade Surveillance platforms created regulatory risk and operational instability, with inadequate documentation for root cause prevention.</p>
+        </div>
+        <div class="case-section">
+          <h5>My Role</h5>
+          <p>L3 Production Support and Functional Governance — managing Tier-3 incidents, performing root cause analysis, building runbooks, coordinating deployments, and producing operational reporting.</p>
+        </div>
+        <div class="case-section">
+          <h5>Approach</h5>
+          <p>Structured RCA methodology for each recurring incident; developed preventive monitoring runbooks and incident playbooks; introduced change control governance for compliance application onboarding.</p>
+        </div>
+      </div>
+      <div class="case-section" style="margin-top:1.25rem;">
+        <h5>Analysis Performed</h5>
+        <p>Root cause analysis · Incident trend analysis · Process documentation · Change control governance · Deployment coordination · Senior management reporting.</p>
+      </div>
+      <div class="case-outcome">
+        <h5>Outcome</h5>
+        <p>Reduced recurring production incidents and improved platform reliability for SEC-regulated systems. Governance documentation became the standard onboarding resource for incoming team members. Incident trend reports enabled proactive leadership decision-making on platform risks.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Skills Dashboard</div>
+    <h2 class="section-title">Capabilities &amp; Tools</h2>
+    <p class="section-desc">Domain expertise built across a decade of enterprise delivery in regulated environments.</p>
+    <div class="grid-2">
+      <div>
+        <div class="skills-category">
+          <h4>Business Analysis</h4>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Requirements Elicitation &amp; BRD/FRD</span><span>Expert</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Gap Analysis &amp; Impact Assessment</span><span>Expert</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Process Mapping &amp; BPMN</span><span>Advanced</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>User Stories &amp; Acceptance Criteria</span><span>Expert</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Traceability Matrix &amp; Governance</span><span>Expert</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:93%"></div></div></div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h4>Project &amp; Agile Delivery</h4>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Agile / Scrum</span><span>Expert</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Sprint Planning &amp; Backlog Refinement</span><span>Advanced</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Release Management</span><span>Expert</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Risk Assessment &amp; Change Management</span><span>Advanced</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skills-category">
+          <h4>Quality Assurance &amp; Testing</h4>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>UAT Governance &amp; Sign-off</span><span>Expert</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>SQL Validation &amp; ETL Testing</span><span>Advanced</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>Functional &amp; Regression Testing</span><span>Expert</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span>API Validation (Postman)</span><span>Proficient</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:70%"></div></div></div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h4>Tools &amp; Platforms</h4>
+          <div class="tag-cloud">
+            <span class="tag">JIRA</span><span class="tag">Confluence</span><span class="tag">Azure DevOps</span><span class="tag">ServiceNow</span><span class="tag">HP ALM / QC</span><span class="tag">NICE Actimize</span><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">MS Excel (Advanced)</span><span class="tag">MS Project</span><span class="tag">Postman</span>
+          </div>
+        </div>
+        <div class="skills-category" style="margin-top:1.5rem;">
+          <h4>Domain Expertise</h4>
+          <div class="tag-cloud">
+            <span class="tag">AML / KYC</span><span class="tag">Transaction Monitoring</span><span class="tag">Trade Surveillance</span><span class="tag">Regulatory Compliance</span><span class="tag">Enterprise Governance</span><span class="tag">Banking &amp; Financial Services</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-desc">Continuously investing in professional development across business analysis, project management, and AI.</p>
+    <div class="grid-2">
+      <div class="cert-card">
+        <div class="cert-icon">🏦</div>
+        <div class="cert-content">
+          <h4>IIBF AML / KYC Certification</h4>
+          <p>Indian Institute of Banking &amp; Finance</p>
+          <span class="cert-badge">✓ Completed March 2026</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📋</div>
+        <div class="cert-content">
+          <h4>Career Essentials in Project Management</h4>
+          <p>Microsoft &amp; LinkedIn Learning</p>
+          <span class="cert-badge">✓ Completed</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">⚡</div>
+        <div class="cert-content">
+          <h4>Agile Fundamentals</h4>
+          <p>Tata Consultancy Services</p>
+          <span class="cert-badge">✓ Completed</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-content">
+          <h4>Google Generative AI Leader</h4>
+          <p>Google</p>
+          <span class="cert-badge progress">⏳ Exam Scheduled</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🎯</div>
+        <div class="cert-content">
+          <h4>ECBA — Entry Certificate in Business Analysis</h4>
+          <p>International Institute of Business Analysis (IIBA)</p>
+          <span class="cert-badge progress">📚 In Progress</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <div class="section-label">Key Achievements</div>
+    <h2 class="section-title">Impact by the Numbers</h2>
+    <p class="section-desc">Measurable business outcomes delivered across enterprise-scale banking and compliance programs.</p>
+    <div class="kpi-grid">
+      <div class="kpi-card"><span class="kpi-num">10+</span><div class="kpi-label">Years in Banking &amp; Compliance Tech</div></div>
+      <div class="kpi-card"><span class="kpi-num">20+</span><div class="kpi-label">Audit-Compliant AML Releases Delivered</div></div>
+      <div class="kpi-card"><span class="kpi-num">0</span><div class="kpi-label">Critical Production Escapes Across All AML Releases</div></div>
+      <div class="kpi-card"><span class="kpi-num">750K+</span><div class="kpi-label">Transactions Validated via SQL</div></div>
+      <div class="kpi-card"><span class="kpi-num">30%</span><div class="kpi-label">Reduction in Requirement-Related Defects</div></div>
+      <div class="kpi-card"><span class="kpi-num">25%</span><div class="kpi-label">Defect Leakage Reduction via Governance Checkpoints</div></div>
+      <div class="kpi-card"><span class="kpi-num">20%</span><div class="kpi-label">Rework Reduction through Agile Alignment</div></div>
+      <div class="kpi-card"><span class="kpi-num">15%</span><div class="kpi-label">Increase in On-Time Sprint Completion</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="container">
+    <div class="section-label">Leadership &amp; Collaboration</div>
+    <h2 class="section-title">How I Lead</h2>
+    <p class="section-desc">Beyond analysis — building teams, frameworks, and cultures of delivery excellence.</p>
+    <div class="grid-3">
+      <div class="lead-card"><div class="lead-icon">🧭</div><h4>Cross-Functional Leadership</h4><p>Led delivery coordination across QA, Business, Compliance, Development, and Infrastructure teams — acting as the connective tissue between stakeholders and implementation.</p></div>
+      <div class="lead-card"><div class="lead-icon">📖</div><h4>Framework &amp; Playbook Building</h4><p>Designed reusable governance artefacts, runbooks, and documentation frameworks that reduced onboarding effort and rework across multiple project teams.</p></div>
+      <div class="lead-card"><div class="lead-icon">🎙️</div><h4>Stakeholder Facilitation</h4><p>Facilitated requirement walkthroughs, alignment workshops, and UAT sign-off sessions with business, compliance, and technical audiences at all levels.</p></div>
+      <div class="lead-card"><div class="lead-icon">📈</div><h4>Data-Driven Reporting</h4><p>Built KPI/KRI dashboards and governance reports that empowered senior leadership to make risk-based decisions with confidence.</p></div>
+      <div class="lead-card"><div class="lead-icon">🔧</div><h4>Process Ownership</h4><p>Took end-to-end ownership of release governance processes — from requirement review through UAT completion and production sign-off — in regulated, audit-sensitive environments.</p></div>
+      <div class="lead-card"><div class="lead-icon">🤖</div><h4>AI-Augmented Delivery</h4><p>Pioneered use of AI-assisted documentation and reporting tools to accelerate governance workflows — a forward-looking capability actively being developed through GenAI certification.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER VISION -->
+<section id="vision">
+  <div class="container">
+    <div class="section-label">Career Vision</div>
+    <h2 class="section-title">Where I'm Headed</h2>
+    <p class="section-desc">A seasoned practitioner ready to grow into senior business analysis, product ownership, or project leadership.</p>
+    <div class="vision-grid">
+      <div class="vision-block">
+        <h4>Short-Term Goals</h4>
+        <ul class="vision-list">
+          <li>Secure a Senior Business Analyst, Product Analyst, or Project Coordinator role where I can apply AML/BFSI domain expertise and governance experience.</li>
+          <li>Complete the IIBA ECBA certification and Google GenAI Leader exam to formalize credentials.</li>
+          <li>Contribute to business process improvement and digital transformation initiatives at scale.</li>
+          <li>Expand into product discovery, roadmapping, and cross-functional product strategy.</li>
+        </ul>
+      </div>
+      <div class="vision-block">
+        <h4>Long-Term Goals</h4>
+        <ul class="vision-list">
+          <li>Grow into a Lead Business Analyst, Product Manager, or Programme Manager role driving enterprise-wide change.</li>
+          <li>Build expertise at the intersection of compliance technology, AI, and business transformation.</li>
+          <li>Mentor the next generation of business analysts entering BFSI and regulatory compliance domains.</li>
+          <li>Contribute to shaping governance frameworks that balance regulatory rigour with agile speed-to-market.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Education</div>
+    <h2 class="section-title">Academic Background</h2>
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-content">
+        <h4>Bachelor of Technology (B.Tech)</h4>
+        <p><strong>Kalinga Institute of Industrial Technology (KIIT)</strong> · Bhubaneswar</p>
+        <p style="margin-top:0.25rem; color: var(--text-muted);">May 2011 – June 2015</p>
+        <div style="margin-top: 0.75rem;" class="tag-cloud">
+          <span class="tag">Engineering Foundation</span><span class="tag">Technology Background</span><span class="tag">Analytical Thinking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label">Testimonials</div>
+    <h2 class="section-title">What Colleagues Say</h2>
+    <p class="section-desc">Feedback from collaborators across compliance, delivery, and engineering teams. <em>(Placeholder — add LinkedIn recommendations here.)</em></p>
+    <div class="grid-2">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Sonaline consistently bridges the gap between complex regulatory requirements and technical teams. Her ability to produce clear, audit-ready documentation and facilitate stakeholder alignment makes her an invaluable part of any compliance delivery program.</p>
+        <div class="testimonial-author">Senior Manager, Compliance Delivery</div>
+        <div class="testimonial-role">Tata Consultancy Services — [Add LinkedIn Recommendation]</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">Working with Sonaline on our AML release cycle was exceptional. She structured our UAT governance in a way that gave us full regulatory confidence — and her dashboards gave leadership the visibility they needed throughout the program.</p>
+        <div class="testimonial-author">Project Delivery Lead</div>
+        <div class="testimonial-role">CIBC Engagement — [Add LinkedIn Recommendation]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="cta-banner">
+      <h3>Ready to Bring Clarity to Your Next BA or PM Role</h3>
+      <p>Open to Business Analyst, Senior Business Analyst, Product Analyst, Project Coordinator, and Project Manager opportunities.</p>
+      <a href="mailto:bhujabalsonalin@gmail.com" class="btn">📧 Let's Connect</a>
+    </div>
+    <div class="section-label">Contact</div>
+    <h2 class="section-title" style="color:white;">Get in Touch</h2>
+    <p class="section-desc">Available for full-time roles, consulting, and collaborations across BFSI and enterprise technology domains.</p>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:bhujabalsonalin@gmail.com">
+        <div class="contact-card-icon">📧</div>
+        <h4>Email</h4>
+        <p>sonalinebhujbal@gmail.com</p>
+      </a>
+      <a class="contact-card" href="tel:+918989811446">
+        <div class="contact-card-icon">📱</div>
+        <h4>Phone</h4>
+        <p>+91 8989 811446</p>
+      </a>
+      <a class="contact-card" href="https://linkedin.com/in/sonalinebhujbal" target="_blank">
+        <div class="contact-card-icon">🔗</div>
+        <h4>LinkedIn</h4>
+        <p>linkedin.com/in/sonalinebhujbal</p>
+      </a>
+      <a class="contact-card" href="https://wa.me/918989811446" target="_blank">
+        <div class="contact-card-icon">💬</div>
+        <h4>WhatsApp</h4>
+        <p>+91 8989 811446</p>
+      </a>
+      <a class="contact-card" href="#">
+        <div class="contact-card-icon">📍</div>
+        <h4>Location</h4>
+        <p>Pune, Maharashtra, India</p>
+      </a>
+      <a class="contact-card" href="#">
+        <div class="contact-card-icon">📄</div>
+        <h4>Resume</h4>
+        <p>Download CV (PDF)</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Sonaline Bhujbal · Business Analyst · Functional Consultant · Pune, India</p>
+  <p style="margin-top:0.5rem;">Open to BA · Senior BA · Product Analyst · Project Coordinator · Project Manager roles</p>
+</footer>
+
+</body>
+</html>
